@@ -11,11 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
       - run: npm ci
       - run: npm run doc
       - run: |
-          git config --global user.name 'terrestris'
-          git config --global user.email 'terrestris@users.noreply.github.com'
-          git diff --quiet || git commit -am "chore: automated doc generation"
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git diff --quiet || git commit -am "docs: update generated documentation [skip ci]"
           git push

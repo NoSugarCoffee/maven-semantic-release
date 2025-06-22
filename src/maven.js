@@ -47,7 +47,7 @@ async function updateVersion(logger, mvnw, versionStr, settingsPath, processAllM
                 ...settingsOption(settingsPath),
                 ...debugOption,
                 '--batch-mode',
-                '--no-transfer-progress',
+                '--quiet',
                 '-DgenerateBackupPoms=false',
                 `-DnewVersion=${versionStr}`,
                 ...processAllModulesOption
@@ -84,7 +84,7 @@ async function updateSnapshotVersion(logger, mvnw, settingsPath, processAllModul
                 ...settingsOption(settingsPath),
                 ...debugOption,
                 '--batch-mode',
-                '--no-transfer-progress',
+                '--quiet',
                 '-DnextSnapshot=true',
                 '-DgenerateBackupPoms=false',
                 ...processAllModulesOption
@@ -124,7 +124,7 @@ async function deploy(logger, mvnw, nextVersion, mavenTarget, settingsPath, clea
               ...settingsOption(settingsPath),
               ...debugOption,
               '--batch-mode',
-              '--no-transfer-progress',
+              '--quiet',
               '-DskipTests'
           ]
         );

@@ -11,13 +11,20 @@ Was inspired by https://github.com/conveyal/maven-semantic-release. It differs i
 * … has an option to allow multimodule projects
 * … can increase a snapshot version after a successful release
 * … has fewer checks to verify th integrity of the setup (does not check `pom.xml`)
+* … is compatible with Maven 3.6.1+ and Maven 4.0.0+ (fixed `--no-transfer-progress` deprecation)
 
 ## Getting started
 
-* `npm i -D semantic-release @terrestris/maven-semantic-release`
-* Add `@terrestris/maven-semantic-release` as a plugin (https://semantic-release.gitbook.io/semantic-release/usage/plugins)
+* `npm i -D semantic-release @nosugarcoffee/maven-semantic-release`
+* Add `@nosugarcoffee/maven-semantic-release` as a plugin (https://semantic-release.gitbook.io/semantic-release/usage/plugins)
 * Configure `settingsPath` or ensure that a maven settings file exists at the expected location
 * Make sure that the `@semantic-release/git` plugin runs after this plugin and includes the `pom.xml` if you want to use it.
+
+## Maven Compatibility
+
+This plugin is compatible with:
+- Maven 3.6.1+ (uses `--quiet` instead of deprecated `--no-transfer-progress`)
+- Maven 4.0.0+ (fully compatible)
 
 ## Options
 
