@@ -20,7 +20,7 @@ describe('maven', () => {
             [
                 'versions:set',
                 '--batch-mode',
-                '--no-transfer-progress',
+                '--quiet',
                 '-DgenerateBackupPoms=false',
                 '-DnewVersion=1.1.1'
             ]
@@ -32,7 +32,7 @@ describe('maven', () => {
     });
 
     test('updateVersion with all options on', () => {
-        updateVersion(logger, true,  '1.1.2', 'some/path', true, true);
+        updateVersion(logger, true, '1.1.2', 'some/path', true, true);
         expect(exec).toBeCalledWith(
             './mvnw',
             [
@@ -41,7 +41,7 @@ describe('maven', () => {
                 'some/path',
                 '-X',
                 '--batch-mode',
-                '--no-transfer-progress',
+                '--quiet',
                 '-DgenerateBackupPoms=false',
                 '-DnewVersion=1.1.2',
                 '-DprocessAllModules'
@@ -61,7 +61,7 @@ describe('maven', () => {
             [
                 'versions:set',
                 '--batch-mode',
-                '--no-transfer-progress',
+                '--quiet',
                 '-DnextSnapshot=true',
                 '-DgenerateBackupPoms=false'
             ]
@@ -73,7 +73,7 @@ describe('maven', () => {
     });
 
     test('updateSnapshotVersion with all options on', () => {
-        updateSnapshotVersion(logger, true,  'some/path', true, true);
+        updateSnapshotVersion(logger, true, 'some/path', true, true);
 
         expect(exec).toBeCalledWith(
         './mvnw',
@@ -83,7 +83,7 @@ describe('maven', () => {
                 'some/path',
                 '-X',
                 '--batch-mode',
-                '--no-transfer-progress',
+                '--quiet',
                 '-DnextSnapshot=true',
                 '-DgenerateBackupPoms=false',
                 '-DprocessAllModules'
@@ -103,8 +103,8 @@ describe('maven', () => {
             [
                 'deploy',
                 '--batch-mode',
-                '--no-transfer-progress',
-                '-DskipTests',
+                '--quiet',
+                '-DskipTests'
             ]
         );
 
@@ -126,7 +126,7 @@ describe('maven', () => {
                 'some/path',
                 '-X',
                 '--batch-mode',
-                '--no-transfer-progress',
+                '--quiet',
                 '-DskipTests'
             ]
         );

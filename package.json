@@ -1,5 +1,5 @@
 {
-  "name": "@terrestris/maven-semantic-release",
+  "name": "@nosugarcoffee/maven-semantic-release",
   "version": "3.1.0",
   "description": "a very simple maven plugin for semantic release",
   "main": "index.js",
@@ -8,18 +8,20 @@
     "doc": "jsdoc2md src/plugin-config.js | ./replace-docs.sh",
     "test": "jest",
     "typecheck": "tsc --pretty --noEmit true --emitDeclarationOnly false",
-    "release": "release-it"
+    "release": "release-it",
+    "lint": "eslint src/ test/",
+    "lint:fix": "eslint src/ test/ --fix"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/terrestris/maven-semantic-release.git"
+    "url": "git+https://github.com/nosugarcoffee/maven-semantic-release.git"
   },
-  "author": "terrestris GmbH & Co. KG <info@terrestris.de>",
+  "author": "nosugarcoffee <nosugarcoffee@users.noreply.github.com>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/terrestris/maven-semantic-release/issues"
+    "url": "https://github.com/nosugarcoffee/maven-semantic-release/issues"
   },
-  "homepage": "https://github.com/terrestris/maven-semantic-release#readme",
+  "homepage": "https://github.com/nosugarcoffee/maven-semantic-release#readme",
   "dependencies": {
     "@semantic-release/error": "^3.0.0",
     "@semantic-release/git": "^10.0.1",
@@ -30,6 +32,12 @@
     "@types/jest": "^29.5.12",
     "@types/node": "^20.14.10",
     "@types/semantic-release__error": "^3.0.3",
+    "eslint": "^8.57.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jest": "^27.9.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
     "jest": "^29.7.0",
     "jsdoc-to-markdown": "^8.0.0",
     "release-it": "^16.1.5",
@@ -42,6 +50,7 @@
     "src/**/*",
     "LICENSE",
     "README.md",
+    "CHANGELOG.md",
     "index.js",
     "package.json"
   ]
