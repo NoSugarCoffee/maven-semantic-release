@@ -52,4 +52,3 @@ function evaluateConfig(config) {
 module.exports = {
     evaluateConfig
 };
-

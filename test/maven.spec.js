@@ -32,7 +32,7 @@ describe('maven', () => {
     });
 
     test('updateVersion with all options on', () => {
-        updateVersion(logger, true,  '1.1.2', 'some/path', true, true);
+        updateVersion(logger, true, '1.1.2', 'some/path', true, true);
         expect(exec).toBeCalledWith(
             './mvnw',
             [
@@ -73,7 +73,7 @@ describe('maven', () => {
     });
 
     test('updateSnapshotVersion with all options on', () => {
-        updateSnapshotVersion(logger, true,  'some/path', true, true);
+        updateSnapshotVersion(logger, true, 'some/path', true, true);
 
         expect(exec).toBeCalledWith(
         './mvnw',
@@ -104,7 +104,7 @@ describe('maven', () => {
                 'deploy',
                 '--batch-mode',
                 '--quiet',
-                '-DskipTests',
+                '-DskipTests'
             ]
         );
 

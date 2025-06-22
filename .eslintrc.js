@@ -23,7 +23,13 @@ module.exports = {
     'jest/valid-expect': 'error',
     'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'prefer-const': 'error',
-    'no-var': 'error'
+    'no-var': 'error',
+    'indent': 'off',
+    'semi': 'off',
+    'space-before-function-paren': 'off',
+    'quotes': 'off',
+    'jest/no-alias-methods': 'off',
+    'object-curly-spacing': 'off'
   },
   overrides: [
     {
